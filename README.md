@@ -1,4 +1,4 @@
-# temperature-data-statistics
+# temperature-data-statistics [![Build Status](https://travis-ci.org/jezzay/temperature-data-statistics.svg?branch=master)](https://travis-ci.org/jezzay/temperature-data-statistics)
 
 Generates statistics from temperature data
 
