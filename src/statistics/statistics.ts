@@ -1,7 +1,7 @@
 import {TemperatureReading} from "../temperatures";
 
 
-export function average(readings: TemperatureReading[]): number {
+export const average = (readings: TemperatureReading[]): number => {
     if (!readings || readings.length === 0) {
         return 0;
     }
@@ -14,9 +14,9 @@ export function average(readings: TemperatureReading[]): number {
         }
     }
     return sum / totalValidReadings
-}
+};
 
-export function median(readings: TemperatureReading[]): number {
+export const median = (readings: TemperatureReading[]): number => {
     if (!readings || readings.length === 0) {
         return 0;
     }
@@ -28,9 +28,9 @@ export function median(readings: TemperatureReading[]): number {
     // odd sized list, return middle value
     const half = (readings.length - 1) / 2;
     return readings[half].temperature;
-}
+};
 
-export function mode(readings: TemperatureReading[]): number[] {
+export const mode = (readings: TemperatureReading[]): number[] => {
     let modes: number[] = [];
     let maxFrequency = 0;
     const occurrences: { [key: number]: number; } = {};
@@ -53,5 +53,5 @@ export function mode(readings: TemperatureReading[]): number[] {
         }
     }
     return modes;
-}
+};
 

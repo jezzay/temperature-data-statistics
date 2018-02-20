@@ -141,7 +141,6 @@ describe('temperature', () => {
             ];
             const temperatureStatistics = calculateTemperatureStatistics(readings);
             expect(temperatureStatistics.id).toEqual('a');
-            // TODO: promise
             expect(temperatureStatistics.average).toEqual(0.21)
         });
 
@@ -170,7 +169,6 @@ describe('temperature', () => {
             ];
             const temperatureStatistics = calculateTemperatureStatistics(readings);
             expect(temperatureStatistics.id).toEqual('a');
-            // TODO: promise
             expect(temperatureStatistics.median).toEqual(1.98)
         });
         it('calculates the modes of the temperature readings to two decimal places', () => {
@@ -213,7 +211,6 @@ describe('temperature', () => {
             ];
             const temperatureStatistics = calculateTemperatureStatistics(readings);
             expect(temperatureStatistics.id).toEqual('a');
-            // TODO: promise
             expect(temperatureStatistics.mode).toEqual([0.53])
         });
     })

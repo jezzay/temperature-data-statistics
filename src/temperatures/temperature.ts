@@ -1,6 +1,5 @@
 import {TemperatureReading, TemperatureReadingGrouping, TemperatureStatistics} from "./temperature.model";
-import {average} from "../statistics";
-import {median, mode} from "../statistics/statistics";
+import {average, median, mode} from "../statistics";
 
 
 export const sortReadings = (readings: TemperatureReading[]): TemperatureReading[] => {

@@ -1,1 +1,1 @@
-export {average} from './statistics'
+export {average, median, mode} from './statistics'
