@@ -9,5 +9,6 @@ module.exports = {
     testMatch: [
         '**/src/**/*.spec.ts'
     ],
+    mapCoverage: true,
     testEnvironment: 'node'
 };

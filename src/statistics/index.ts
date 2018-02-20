@@ -1,1 +1,1 @@
-export {stat} from './statistics'
+export {average} from './statistics'
