@@ -1,4 +1,4 @@
-import {TemperatureReading} from "../temperatures/temperature.model";
+import {TemperatureReading} from "../temperatures";
 
 const statistics = require('./statistics');
 
@@ -41,6 +41,12 @@ describe('statistics', () => {
             ];
             const average = statistics.average(readings);
             expect(average).toBe(5.6225000000000005)
+        });
+
+        it('should return zero when there are zero readings', () => {
+            const readings: TemperatureReading[] = [];
+            const average = statistics.average(readings);
+            expect(average).toBe(0)
         });
     });
     describe('.median()', () => {

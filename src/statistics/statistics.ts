@@ -1,7 +1,10 @@
-import {TemperatureReading} from "../temperatures/temperature.model";
+import {TemperatureReading} from "../temperatures";
 
 
 export function average(readings: TemperatureReading[]): number {
+    if (!readings || readings.length === 0) {
+        return 0;
+    }
     let sum = 0;
     let totalValidReadings = 0;
     for (let reading of readings) {
@@ -13,7 +16,6 @@ export function average(readings: TemperatureReading[]): number {
     return sum / totalValidReadings
 }
 
-// TODO: ensure that before this called, any invalid data is removed
 export function median(readings: TemperatureReading[]): number {
     if (!readings || readings.length === 0) {
         return 0;
@@ -34,17 +36,20 @@ export function mode(readings: TemperatureReading[]): number[] {
     const occurrences: { [key: number]: number; } = {};
 
     for (const reading of readings) {
-        if (occurrences[reading.temperature]) {
-            occurrences[reading.temperature]++
-        } else {
-            occurrences[reading.temperature] = 1;
-        }
+        // only count valid readings
+        if (reading.temperature) {
+            if (occurrences[reading.temperature]) {
+                occurrences[reading.temperature]++
+            } else {
+                occurrences[reading.temperature] = 1;
+            }
 
-        if (occurrences[reading.temperature] > maxFrequency) {
-            modes = [reading.temperature];
-            maxFrequency = occurrences[reading.temperature]
-        } else if (occurrences[reading.temperature] === maxFrequency) {
-            modes.push(reading.temperature)
+            if (occurrences[reading.temperature] > maxFrequency) {
+                modes = [reading.temperature];
+                maxFrequency = occurrences[reading.temperature]
+            } else if (occurrences[reading.temperature] === maxFrequency) {
+                modes.push(reading.temperature)
+            }
         }
     }
     return modes;

@@ -9,6 +9,7 @@ module.exports = {
     testMatch: [
         '**/src/**/*.spec.ts'
     ],
+    coveragePathIgnorePatterns: ['/node_modules/','index.ts'],
     mapCoverage: true,
     testEnvironment: 'node'
 };
